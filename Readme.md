@@ -3,7 +3,7 @@
 <br />
 
 
-![](gif-1.gif)
+![](demo-gif.gif)
 
 # steps
 1. clone the repositiory or download it
