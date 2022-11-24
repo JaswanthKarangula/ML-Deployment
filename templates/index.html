@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Model Inference
+        </title>
+    </head>
+
+    <body>
+
+        <form action="/" enctype="multipart/form-data" method="POST"> 
+            <input type="file" name="imagefile" />
+            <input type="submit" value="Predict Class"/>
+         </form>
+
+         {% if prediction %}
+            <p > image is a {{prediction}}</p>
+         {% endif %}
+
+    </body>
+
+
+
+</html>
