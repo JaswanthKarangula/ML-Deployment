@@ -41,7 +41,7 @@ def model_classification(imagepath):
     objid=np.argmax(prediction_prob[0], axis=-1)
     final_class = class_names[objid]
     final_class_prob = prediction_prob[0][objid].numpy()
-    return final_class+'With Probability (%.2f%%)' %(final_class_prob)
+    return final_class+'  With Probability (%.2f)' %(final_class_prob)
 
 
 
