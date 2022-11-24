@@ -5,6 +5,8 @@
 
 ![](demo_gif.gif)
 
+![](demo.mov)
+
 # steps
 1. clone the repositiory or download it
 2. install the dependencies included in the requirements.ipynb file
