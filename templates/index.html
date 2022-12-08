@@ -12,6 +12,14 @@
     <body>
         <h1 class = 'text-center'> Fruits-Vegetables Classification </h1>
         <form class="p-3 text-center" action="/" enctype="multipart/form-data" method="POST"> 
+            
+            <select id="model" name = "model" method="GET" action="/">
+                <option value="{{models[0]}}" selected>{{models[0]}}</option>
+                {% for model in models[1:] %}
+                  <option value="{{model}}">{{model}}</option>
+                {% endfor %}
+            </select>
+
             <input class = "form-control"type="file" name="imagefile" />
             <input class="btn btn-primary mt-3 " type="submit" value="Predict Class"/>
          </form>

@@ -1,0 +1,29 @@
+docker run  --rm -it -p 8000-8002:8000-8002 --name triton_server -v $PWD:/models nvcr.io/nvidia/tritonserver:21.02-py3 tritonserver --model-repository=/saved_models --strict-model-config=false
+
+
+
+
+docker run -t --rm -p 8501:8501 \
+    -v "" \
+    -e MODEL_NAME=half_plus_two \
+    tensorflow/serving &
+
+docker run -t --rm -p 8501:8501 \
+    -v "$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two" \
+    -e MODEL_NAME=half_plus_two \
+    tensorflow/serving &
+
+Start ---------------------------------------
+
+docker run -it -v /Users/jaswanth/Projects/Fruits-and-Vegetable-Classification:/classification-serving -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
+
+
+--> ll 
+--> classification-serving is the director where our files are present
+--> ls -ltr classification-serving
+
+# Running a serving
+
+tensorflow_model_server --rest_api_port= 8605 --model_name=fruits_classification --model_base_path = /classification-serving/saved_models
+
+tensorflow_model_server --rest_api_port=8601 --model_name=fruits_classification --model_base_path=/classification-serving/saved_models/
